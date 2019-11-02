@@ -1,35 +1,34 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include <stdio.h>
-#include <stdlib.h>
-
-int linear_seacrh(int data[],int size, int key)
+int linear_search(int data[], int sk, int size)
 {
-    int found=0; //initialized not found
-    int position=-1;  //set to invalid index (what i want to find)
-    int index=0;
+  int found=0; //found=0, because initialized is not found when the begin in the program
+  int position=-1; //position is the whre i found y search key, whrn the program is start search is the index -1;
+  int index;//the array begin of the program the index value is the 0
 
-    while(index<size && found==0)
-    {
-        if(data[index]==key)
-        {
-            found=1;
-            position=index;
-            break;
-        }
-        index++;
-    }
-    return position; //return where the key was found
+
+  for(index=0; index<size; index++)
+  {
+   if(data[index]==sk)
+
+   {
+    found=1;
+    position=index;
+    break;
+
+   }
+  }
+   return position; //return where the key was foun
+
 }
 
-int main() //call function
+int main()
 {
-    int array[]={100,600,800,750,250,900}; //the array set
-    int value; //declare the search key using "value"
-    printf("input your search value: "); //user input
-    scanf("%d", &value);
-    printf("your search value position is: %d\n",linear_seacrh(array,6,value)); //print what is the search key
-    return 0;
+ int array[]={100,200,300,400,500};
+ int value;
+ printf("enter your seach value: ");
+ scanf("%d",&value);
+ printf("the srach value position is: %d\n",linear_search(array,value,5));
 
 }
